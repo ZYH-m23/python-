@@ -1,0 +1,63 @@
+1.注意格式与缩进
+age = 3
+if age >= 18:
+    print('adult')
+elif age >= 6:
+    print('teenager')
+else:
+    print('kid')
+2.
+age = 3
+if age >= 18:
+    print('your age is', age)
+    print('adult')
+else:
+    print('your age is', age)
+    print('teenager')
+
+升级版
+birth = input('birth: ')
+if birth < 2000:
+    print('00前')
+else:
+    print('00后')
+
+
+模式匹配
+用ifelse很难，所以考虑用match
+score = 'B'
+if score == 'A':
+    print('score is A.')
+elif score == 'B':
+    print('score is B.')
+elif score == 'C':
+    print('score is C.')
+else:
+    print('invalid score.')
+变成：
+score = 'B'
+match score:
+    case 'A':
+        print('score is A.')
+    case 'B':
+        print('score is B.')
+    case 'C':
+        print('score is C.')
+    case _:         # _表示匹配到其他任何情况
+        print('score is ???.')
+
+复杂匹配：
+age = 15
+match age:
+    case x if x < 10:
+        print(f'< 10 years old: {x}')
+    case 10:
+        print('10 years old.')
+    case 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18:
+        print('11~18 years old.')
+    case 19:
+        print('19 years old.')
+    case _:
+        print('not sure.')
+
+
