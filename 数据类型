@@ -20,6 +20,7 @@
 >>> classmates.append('Adam')
 >>> classmates
 ['Michael', 'Bob', 'Tracy', 'Adam']
+
 也可以把元素插入到指定的位置，比如索引号为1的位置（及加入后在1的位置）：
 >>> classmates.insert(1, 'Jack')
 >>> classmates
@@ -135,3 +136,6 @@ str是不变对象，而list是可变对象
 'Abc'
 >>> a
 'abc'
+
+replace方法创建了一个新字符串'Abc'并返回，变量a仍指向原有的字符串'abc'，但变量b却指向新字符串'Abc'
+
