@@ -69,3 +69,46 @@ f2(1, 2, d=99, ext='hello')
 # a = 1, b = 2, c = 0 (使用了默认值)
 # d = 99 (必须写 d=，否则报错)
 # kw = {'ext': 'hello'}
+
+
+注意函数的调用
+eg1:
+>>> def enroll(name,gender,age=6,city='Beijing'):
+...     print('name:',name)
+...     print('gender:',gender)
+...     print('age:',age)
+...     print('city:',city)
+... enroll('Sarash','F')
+name: Sarash
+gender: F
+age: 6
+city: Beijing
+eg2:
+>>> def add_end(L=[]):
+...     L.append('END')
+...     return L
+>>> add_end([1,2,3])
+[1, 2, 3, 'END']
+
+def add_end(L=None):
+    if L is None:
+        L = []
+    L.append('END')
+    return L
+用这个可以避免重复处理
+
+为什么要设计str、None这样的不变对象呢？因为不变对象一旦创建，对象内部的数据就不能修改，
+这样就减少了由于修改数据导致的错误。
+
+>>> def cal(numbers):
+...     sum=0
+...     for n in numbers:
+...         sum+=n*n
+...     return sum
+...
+>>> cal([1,2,3])
+14
+
+*numbers   是指往number中放任意的数量的参数，进行处理
+
+
